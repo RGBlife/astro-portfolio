@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Jeanine White"
+  description="About Jeanine White Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <!-- <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Coding"
+        /> -->
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            From a young age, I've been drawn to challenges and puzzles, whether
+            it's in the form of sporty activities or intricate problem-solving
+            games. This innate curiosity and love for challenges eventually led
+            me to the world of coding. The appeal of deciphering complex
+            problems, building solutions, and seeing immediate results captured
+            my interest. While my initial education was in accountancy, my
+            growing passion for technology, especially the art of coding and
+            problem-solving, steered my career trajectory towards web
+            development. This transition was further solidified when I embarked
+            on the rigorous journey of a BootCamp. Today, as a full-stack
+            developer, I see every project as a new puzzle, waiting to be
+            solved, and every line of code as a step closer to the solution.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>
+            My academic journey began with a focus on accountancy, a domain that
+            taught me the importance of precision and attention to detail.
+            However, my professional experiences introduced me to the
+            captivating world of technology. The allure of coding, the thrill of
+            problem-solving, and the satisfaction of crafting functional
+            solutions compelled me to pivot. To hone my skills and immerse
+            myself fully in this new passion, I took the path of a BootCamp.
+            This intensive training equipped me with both the technical skills
+            and the mindset required to thrive in the fast-paced world of web
+            development.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="content">
+          <p>
+            <b> Languages:</b>
+             Proficient in JavaScript, TypeScript, and Python, with a strong
+            foundation in HTML and CSS.
+          </p>
+          <p>
+            <b> Frameworks:</b>
+             Hands-on experience with React, Node.js, and Express, ensuring
+            comprehensive web solutions.
+          </p>
+          <p>
+            <b> General Developer Skills:</b>
+             Adaptive Learning: Quick adaptation to emerging technologies and
+            tools. Collaborative Spirit: A proven track record of teamwork,
+            ensuring project success. Problem Solving: Leveraging technical
+            expertise to address and resolve multifaceted challenges.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
